@@ -7,7 +7,7 @@ import activity from '../../assets/restore.png'
 import setting from '../../assets/setting.png'
 import menu from '../../assets/menu.png'
 import { Cursor } from 'mongoose'
-import { Context } from '../../context/Context'
+import { Context } from '../../Context/Context'
 
 const Sidebar = () => {
 

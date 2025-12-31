@@ -10,7 +10,7 @@ import next from '../../assets/next.png'
 import load from '../../assets/loading.png'
 
 import './Main.css'
-import { Context } from '../../context/Context'
+import { Context } from '../../Context/Context'
 const Main = () => {
     const { input, setInput, showResult, onSent, recentPrompt, loading, resultData } = useContext(Context);
     return (
