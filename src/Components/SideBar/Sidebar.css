@@ -1,0 +1,194 @@
+.sidebar_comp {
+    height: 100vh;
+    width: 80px;
+    max-width: 300px;
+    background: linear-gradient(to bottom, #000000, #1a1a2e, #16213e);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 20px 12px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    transition: width 0.35s ease;
+    font-family: 'Google Sans', sans-serif;
+    flex-shrink: 0;
+}
+
+.sidebar_comp:has(.plus_section p) {
+    width: 260px;
+}
+
+.top_comp {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    flex: 1;
+    min-height: 0; 
+}
+
+.menu_section img {
+    height: 28px;
+    width: 28px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.menu_section img:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.plus_section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.plus_section:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.plus_icon {
+    height: 18px;
+    width: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.recent_label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    padding-left: 4px;
+}
+
+.recent_list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.recent_list::-webkit-scrollbar {
+    width: 0;
+}
+.recent_list {
+    scrollbar-width: none;
+}
+
+.questions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.questions:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.questions img {
+    height: 20px;
+    width: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+.questions p {
+    color: white;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button_comp {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 10px;
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.section:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.section img {
+    height: 24px;
+    width: 24px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+}
+
+.section p,
+.plus_section p {
+    color: white;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .sidebar_comp {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 72px;
+        z-index: 1000;
+        transition: width 0.3s ease;
+    }
+
+    .sidebar_comp:has(.plus_section p) {
+        width: 240px;
+        box-shadow: 8px 0 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .plus_section p,
+    .section p,
+    .recent_label {
+        display: none;
+    }
+    .sidebar_comp:has(.plus_section p) .plus_section p,
+    .sidebar_comp:has(.plus_section p) .section p,
+    .sidebar_comp:has(.plus_section p) .recent_label {
+        display: block;
+    }
+
+    .recent_list {
+        display: none;
+    }
+
+    .sidebar_comp:has(.plus_section p) .recent_list {
+        display: flex;
+    }
+}
